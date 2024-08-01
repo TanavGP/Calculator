@@ -25,6 +25,7 @@
     align-items: flex-end;
     justify-content: flex-end;
     padding: 20px;
+    font-size: 200%;
 }
 
 button {
