@@ -61,8 +61,8 @@ function addButtonFunctionality() {
 }
 
 function updateResultDisplay() {
-    const resultDisplayElement = document.querySelector('#result-display');
-    resultDisplayElement.textContent = expression.toString().replace(/,/g, ' ');
+    const resultDisplayElement = document.querySelector('#result-display>input');
+    resultDisplayElement.value = expression.toString().replace(/,/g, ' ');
 }
 
 function operate(token) {
