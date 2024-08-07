@@ -3,11 +3,31 @@
     padding: 0;
 }
 
+:root {
+    --result-display-bg-color: rgb(40, 39, 39);
+    --digit-btn-bg-color: rgb(96, 95, 95);
+    --specials-btn-bg-color: rgb(54, 53, 53);
+    --operator-btn-bg-color: orange;
+
+    --width: min(400px, 100vw);
+    --height: min(640px, 100vh);
+    --num-btn-x: 4;
+    --num-btn-y: 5;
+    --min-display-result-height: 120px;
+    --min-box-size: 40px;
+
+    --display-result-height: max(var(--min-display-result-height), 
+                                calc(var(--height) - var(--num-btn-y) * (var(--width) / var(--num-btn-x))));
+    --box-size: max(var(--min-box-size), calc((var(--height) - var(--display-result-height)) / var(--num-btn-y)));
+}
+
 #main-container {
-    margin-top: 80px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: var(--width);
+    height: var(--height);
 }
 
 #main-container > div:last-child {
@@ -16,33 +36,34 @@
 }
 
 #result-display {
-    background-color: rgb(40, 39, 39);
+    background-color: var(--result-display-bg-color);
     color: white;
-    width: 360px;
-    height: 110px;
+    width: calc(var(--num-btn-x) * var(--box-size));
+    height: var(--display-result-height);
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 20px;
     font-size: 200%;
 }
 
 button {
-    height: 100px;
-    width: 100px;
-    font-size:xx-large;
+    height: var(--box-size);
+    width: var(--box-size);
+    font-size: xx-large;
     font-weight: bold;
-    border-radius: 0%;
     color: white;
+    border-radius: 0%;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
 
 #left-container > .row > button {
-    background-color: rgb(96, 95, 95);
+    background-color: var(--digit-btn-bg-color);
 }
 
 #left-container > .row:first-child > button {
-    background-color: rgb(54, 53, 53);
+    background-color: var(--specials-btn-bg-color);
 }
 
 #right-container {
@@ -51,7 +72,7 @@ button {
 }
 
 #right-container > button {
-    background-color: orange;
+    background-color: var(--operator-btn-bg-color);
 }
 
 .row {
@@ -60,6 +81,6 @@ button {
 }
 
 .dbl-width {
-    width: 200px;
+    width: calc(2 * var(--box-size));
 }
 
