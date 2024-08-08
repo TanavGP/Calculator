@@ -9,8 +9,8 @@
     --specials-btn-bg-color: rgb(54, 53, 53);
     --operator-btn-bg-color: orange;
 
-    --width: min(400px, 100vw);
-    --height: min(720px, 100vh);
+    --width: min(400px, 100dvw);
+    --height: min(720px, 100dvh);
     --num-btn-x: 4;
     --num-btn-y: 5;
     --min-display-result-height: 120px;
